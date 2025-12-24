@@ -17,7 +17,7 @@ def conectar_google_sheets():
     
     # Cargar credenciales
     # Intentamos buscar el archivo solo por su nombre
-    creds = ServiceAccountCredentials.from_json_keyfile_name('credenciales.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
     
     # Autorizar cliente
     client = gspread.authorize(creds)
@@ -95,3 +95,4 @@ if len(carrito) > 0:
                 st.warning("Por favor completa tu nombre y dirección.")
 else:
     st.info("Selecciona al menos un plato para comenzar.")
+
