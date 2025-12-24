@@ -36,7 +36,7 @@ st.markdown("""
 # --- CONEXIÓN A GOOGLE SHEETS ---
 def init_connection():
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_name('SISTEMA_CHIFA/credenciales.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('credenciales.json', scope)
     client = gspread.authorize(creds)
     # Abre la hoja "Pedidos Chifa"
     sheet = client.open("Pedidos Chifa").sheet1
@@ -172,4 +172,5 @@ with st.expander("Ver Histórico de Ventas"):
             st.write("No hay datos registrados aún.")
     except Exception as e:
         st.write(f"No hay datos visibles (Asegúrate de tener encabezados en la hoja): {e}")
+
 
